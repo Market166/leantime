@@ -32,12 +32,14 @@
 
     </x-global::actions.dropdown>
 
-    <x-global::actions.dropdown variant="panel" as="li" menu-class="tw-p-m tw-h-screen tw-overflow-y-auto" menu-id="envvarCaptureDropdown" class="notificationDropdown" keep-open>
-        <x-slot:trigger class="profileHandler newsDropDownHandler" hx-get="{{ BASE_URL }}/envvar/capture" hx-target="#envvarCaptureDropdown" data-tippy-content="Capture env var">
+    <li class="notificationDropdown">
+        <a href="javascript:void(0);"
+           class="profileHandler"
+           onclick="leantime.envvarController.openCaptureModal();"
+           data-tippy-content="{{ __('Capture environment variable') }}">
             <span class="fa-solid fa-key"></span>
-        </x-slot:trigger>
-
-    </x-global::actions.dropdown>
+        </a>
+    </li>
 
     <x-global::actions.dropdown variant="panel" as="li" menu-id="notificationsDropdown" class="notificationDropdown" keep-open>
         <x-slot:trigger class="profileHandler notificationHandler" data-tippy-content="{{ __('popover.notifications') }}">
